@@ -1,0 +1,32 @@
+export const BookingData=[
+    {
+        'lname':'Daniel','fname':'Jack','rn':'301','cid':'13/03/2022','cod':'18/03/2022','status':'checkedout'
+    },
+    {
+        'lname':'john','fname':'Adam','rn':'302','cid':'14/03/2022','cod':'17/03/2022','status':'checkedout'
+    },
+    {
+        'lname':'Sparrow','fname':'Jack','rn':'303','cid':'13/03/2022','cod':'13/03/2022','status':'Booked'
+    },
+    {
+        'lname':'Reddy','fname':'Sunder','rn':'304','cid':'09/03/2022','cod':'11/03/2022','status':'Checkedin'
+    },
+    {
+        'lname':'Parker','fname':'Peter','rn':'305','cid':'13/03/2022','cod':'13/03/2022','status':'Booked'
+    },
+    {
+        'lname':'Jackson','fname':'Mickel','rn':'306','cid':'13/03/2022','cod':'13/03/2022','status':'checkedout'
+    },
+    {
+        'lname':'Bolt','fname':'Husain','rn':'307','cid':'13/03/2022','cod':'13/03/2022','status':'checkedout'
+    },
+    {
+        'lname':'Arya','fname':'Stark','rn':'308','cid':'13/04/2022','cod':'13/04/2022','status':'Booked'
+    },
+    {
+        'lname':'Son','fname':'Robert','rn':'309','cid':'27/04/2022','cod':'27/04/2022','status':'Booked'
+    },
+    {
+        'lname':'Fazil','fname':'fahad','rn':'310','cid':'15/03/2022','cod':'15/03/2022','status':'Checkedin'
+    }
+] 

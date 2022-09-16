@@ -1,0 +1,79 @@
+.mainbox{
+    width: 100%;
+    /* height: 100vh; */
+    background-color: rgb(233, 231, 231);
+}
+#head{
+    padding-left: 78px;
+}
+.header{
+   margin-left: 70px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    
+}
+.table_sec_booking{
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    height: 600px;
+    overflow-y: scroll;
+    align-items: flex-start;
+}
+.wrapper_booking{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+    background-color: #fff;
+    color: black;
+    width: 90%;
+    border: 1px solid lightgrey;
+    height: 70px;
+        position: sticky;
+        top: 0;
+}
+.book_container{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+    background-color: #fff;
+    color: black;
+    width: 90%;
+    border: 1px solid lightgrey;
+    height: 70px;
+}
+@media only screen and (max-width: 700px) {
+    .header{
+        
+       margin-left: 40px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+}
+@media only screen and (max-width: 600px) {
+    .header{
+       width: 100%;
+        display: flex;
+        gap: 2px;
+        align-items: center;
+    }
+   input{
+    width: 100px;
+    left: 0;
+   }
+   .book_container{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+    background-color: #fff;
+    color: black;
+    width: 90%;
+    border: 1px solid lightgrey;
+    height: 70px;
+}
+}
+

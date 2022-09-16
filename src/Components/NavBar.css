@@ -1,0 +1,107 @@
+.main{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    
+}
+.leftdiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.rightdiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.burgerm{
+    position: absolute;
+    right: 10px;
+    top: 60px;
+}
+
+    
+.Bag{
+    width:40px;
+    height:40px;
+    
+}
+
+
+
+.orange{
+    color: orange;
+    border-bottom: 1px solid orange;
+    text-decoration: none;
+}
+.black{
+    text-decoration: none;
+    color: black;
+}
+.burbtn{
+    display: none;
+    
+}
+.leftsub{
+    display: flex;
+    gap: 10px;
+    
+}
+input{
+    height: 35px;
+    padding-left: 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 700px) {
+    .admin{
+        font-size: small;
+    }
+    
+
+    .condacticon{
+        width: 20px;
+    }
+     
+     }
+     .bookingroom{
+        font-size: small;
+     }
+     .leftdiv{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+     }
+     .rightdiv{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+   
+
+   
+
+    
+ 
+  @media only screen and (max-width: 600px) {
+    .rightdiv{
+        display: none;
+    }
+    
+    .leftsub{
+        display: none;
+    }
+    .burbtn{
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    }
+

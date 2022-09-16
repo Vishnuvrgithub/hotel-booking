@@ -1,0 +1,22 @@
+.popup-container{
+    position: relative;
+    display: grid;
+    justify-content: center;
+    bottom: 110px;
+
+}
+#close{
+    color: orange;
+    margin-left: 10px;
+}
+#or{
+    margin-left: 10px;
+}
+.popup{
+    width: 500px;
+    border-radius: 7px ;
+    display: grid;
+    justify-content: center;
+   
+    background-color: white;
+  }
