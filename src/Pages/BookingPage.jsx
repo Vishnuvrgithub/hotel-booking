@@ -4,6 +4,7 @@ import './BookingPage.css'
 import Button from '../Components/Button'
 import NewBooking from './NewBooking'
 import { useState } from 'react'
+import NewAmenities from './NewAmenities'
 
 const BookingPage = ({datas}) => {
   const [Booking, setBooking] = useState(false)
@@ -56,6 +57,7 @@ const BookingPage = ({datas}) => {
     
 
     </div>
+  
     </div>
     </div>
   )

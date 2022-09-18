@@ -28,7 +28,7 @@ const Popup = ({setstate}) => {
    </div></form></div>
    </div>
      
-   
+    
   )
 }
 
