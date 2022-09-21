@@ -1,0 +1,11 @@
+.rountlabel{
+    height: 30px;
+    width: 70px;
+    border: 1px solid orange;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 15px;
+    gap: 20px;
+}

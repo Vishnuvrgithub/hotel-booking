@@ -6,7 +6,7 @@ const RoomLabel = ({bg,title,prop,types}) => {
     <div className='box'>
         <label className='room11' >{title} *</label> 
     <div>
-       <input type={types} className='ip label' placeholder={title}  onChange={(event)=>{prop(event.target.value)}} required/>
+       <input type={types} className='ip_label' placeholder={title}  onChange={(event)=>{prop(event.target.value)}} required/>
     </div>
     </div>
   )

@@ -14,9 +14,9 @@ const HomePages = () => {
      
      <div className='NavContainor'> <NavBar/></div>
      <div className="body"><br /><br />
-      <div className='HotelImg'></div><br /><br />
+      <div className='HotelImg'></div>
       <div className="checkinmain">
-      <div className='CheckIn'><CheckIn heading='Checking in today' btntxt='Check in' data={Checkindata}/></div>
+      <div className='CheckIn'><CheckIn heading='Checking in today' btntxt='Check in' data={Checkindata} icon=''/></div>
       <div className='CheckOut'><CheckIn heading='Checking out today' btntxt='Check out' data={Checkoutdata}/></div>
        </div>
     </div>

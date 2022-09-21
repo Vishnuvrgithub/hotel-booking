@@ -1,7 +1,11 @@
 .mainbox{
     width: 100%;
-    /* height: 100vh; */
+    height: 135vh;
     background-color: rgb(233, 231, 231);
+}
+.value{
+    font-size: larger;
+    font-weight: bold;
 }
 #head{
     padding-left: 78px;
@@ -19,7 +23,6 @@
     display: grid;
     place-items: center;
     height: 600px;
-    overflow-y: scroll;
     align-items: flex-start;
 }
 .wrapper_booking{
@@ -49,7 +52,7 @@
         
        margin-left: 40px;
         display: flex;
-        gap: 10px;
+        gap: 20px;
         align-items: center;
     }
 
@@ -58,7 +61,7 @@
     .header{
        width: 100%;
         display: flex;
-        gap: 2px;
+        gap: 10px;
         align-items: center;
     }
    input{
@@ -74,6 +77,26 @@
     width: 90%;
     border: 1px solid lightgrey;
     height: 70px;
+}
+@media only screen and (max-width: 500px) {
+    .wrapper_booking{
+        display: none;
+    }
+
+    .book_container{
+        display: grid;
+        grid-template-columns: none;
+    }
+    .value{
+        font-size: medium;
+    }
+    .values{
+        font-size: small;
+    }
+    .values1{
+        display: none;
+    }
+
 }
 }
 

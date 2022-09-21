@@ -4,7 +4,7 @@ import './BookingPage.css'
 import Button from '../Components/Button'
 import NewBooking from './NewBooking'
 import { useState } from 'react'
-import NewAmenities from './NewAmenities'
+
 
 const BookingPage = ({datas}) => {
   const [Booking, setBooking] = useState(false)
@@ -38,11 +38,11 @@ const BookingPage = ({datas}) => {
          return (
         
         <div className="book_container" key={index}>
-        <div className="values">{rdatas.lname}</div>
-        <div className="values">{rdatas.fname}</div>
+        <div className="value">{rdatas.lname}</div>
+        <div className="values1">{rdatas.fname}</div>
         <div className="values">{rdatas.rn}</div>
-        <div className="values">{rdatas.cid}</div> 
-        <div className="values">{rdatas.cod}</div> 
+        <div className="values1">{rdatas.cid}</div> 
+        <div className="values1">{rdatas.cod}</div> 
         <div className="values">{rdatas.status}</div> 
         </div>
          );

@@ -7,7 +7,7 @@ import BurgerButton from '../Pages/BurgerButton'
 
 
 function NavBar() {
- const [navoption, setNavoption] = useState('home')
+//  const [navoption, setNavoption] = useState('home')
  const [burbtn, setBurbtn] = useState(false)
  function Burger(){
         setBurbtn(!burbtn)
@@ -18,7 +18,7 @@ function NavBar() {
     <div className='main'>
       <div className='leftdiv'>
      <div className='baglogo'><img className='Bag' src={Bag} alt=""/></div>
-        <div className='bookingsystem '><h2>Booking Systems</h2></div>
+        <div className='bookingsystem '><h2><NavLink to='/'  className={({isActive})=>(isActive ?'black':'black')}>BOOKING SYSTEM</NavLink></h2></div>
 
         <div className="leftsub">
         <div >
