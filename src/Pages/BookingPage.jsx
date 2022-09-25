@@ -4,6 +4,7 @@ import './BookingPage.css'
 import Button from '../Components/Button'
 import NewBooking from './NewBooking'
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 
 const BookingPage = ({datas}) => {
@@ -14,14 +15,15 @@ const BookingPage = ({datas}) => {
   }
   return (
     <div className='mainbox'>
-      <NavBar/> <h1 id='head'>Bookings</h1>
+      <NavBar/><div className="mainheader"> <h1 id='head'>Bookings</h1><div><label  htmlFor="" >
+         <NavLink to='/NewBooking'id='newpage'> New Booking</NavLink></label></div></div>
       <div className='header'>
      
         <div><input type="text"  placeholder='(Type Guest Name)'/></div> <div><input type="text"  placeholder='-Any status-'/> </div>
         <div> <Button text='search'/> </div>
-        <div><Button text ='New Booking' fun={New}/></div>
+        
       </div>
-      <div className="bookingbody">
+      <div className="bookingbody"> 
         <div>
         <div className="table_sec_booking">
         
@@ -48,16 +50,7 @@ const BookingPage = ({datas}) => {
          );
         })}
         </div>
-        <div>
-        
-        </div>
-      </div>
-      <div className={Booking ? 'NewBooking' : ""}>
-       {Booking && <NewBooking  setstate={setBooking}/>}
-    
-
-    </div>
-  
+      </div>  
     </div>
     </div>
   )

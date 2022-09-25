@@ -6,6 +6,7 @@ import { TableDetials } from './Components/TableDetials';
 import RoomDetials from './Pages/RoomDetials';
 import BookingPage from './Pages/BookingPage';
 import { BookingData } from './Components/BookingData';
+import NewBooking from './Pages/NewBooking';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path='/' element={<HomePages/>}/>
       <Route path='/rooms' element={<RoomDetials data={TableDetials}/>}/>
       <Route path='/booking' element={<BookingPage datas={BookingData}/>}/>
+      <Route path='/NewBooking' element={<NewBooking  />}/>
 
     </Routes>
     
