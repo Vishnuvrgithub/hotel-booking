@@ -1,7 +1,9 @@
 .mainframe{
     width: 100%;
-    height: 135vh;
+  
     background-color: rgb(233, 231, 231);
+    position: relative;
+   
   
 }
 
@@ -20,7 +22,7 @@
     
     display: grid;
     place-items: center;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr  ;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr ;
     background-color: #fff;
     color: black;
     width: 90%;
@@ -50,6 +52,54 @@
     
   }
 
+  .delete_popup{
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid black ;
+    display: grid;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    margin: auto;
+    padding: 40px;
+    
+    
+  }
+  .delete_popup_buttons{
+   
+    display: flex;
+    
+ width: 100%;
+ gap: 20px;
+    
+  }
+
+
+  @media only screen and (max-width: 500px) {
+    .data_container{
+    
+      display: grid;
+      place-items: center;
+      grid-template-columns: none ;
+      background-color: #fff;
+      color: black;
+      width: 90%;
+      border: 1px solid lightgrey;
+      height: 70px;
+  
+  
+    }
+    .wrapper{
+      display: none;
+      
+    }
+    .icons{
+      display: none;
+    }
+  }
   
 
   

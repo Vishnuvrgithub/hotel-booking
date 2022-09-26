@@ -9,8 +9,10 @@ import { useNavigate } from 'react-router-dom'
 
 
 
+
 const NewBooking = () => {
   const [available, setAvailable] = useState(false)
+ 
 
   const navigate=useNavigate()
   const [lastname, setLastName] = useState('')
@@ -21,7 +23,7 @@ const NewBooking = () => {
   const [noc, setNoc] = useState('')
 
   function Available(e){
-      setAvailable(!available)
+      setAvailable(true)
     console.log(available)
     e.preventDefault()
     console.log(lastname,firstname,cid,cod,nod,noc);

@@ -43,10 +43,11 @@ const {roomNumber,adultCapacity,childCapacity,price} = formData;
 const addRoom=()=>apicall("/rooms","POST",formData)
 const updateRoom=()=>apicall(`/rooms/${formData.id}`,"PUT",formData)
 
-  const closeWindow =()=>{
+function closeWindow(){
     setState(false)
     setEditingId(null)
   }
+
   return (
     <div className="popup_main">
    <div className="popup-container">
