@@ -1,10 +1,15 @@
 .mainframe{
     width: 100%;
-  
-    background-color: rgb(233, 231, 231);
-    position: relative;
+      height: 100%;
+    
    
   
+}
+.subframe{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(233, 231, 231);
+  position: relative;
 }
 
 .btn_add{
@@ -51,20 +56,29 @@
     align-items:  center;
     
   }
+  .main_delete_popup{
+    width: 100%;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    position:fixed;
+    top: 0%;
+    left: 0%;
+    display: grid;
+    place-items: center;
+  }
 
   .delete_popup{
+    box-shadow: 7px 6px 4px 0px #888888;
     width: 200px;
     border-radius: 10px;
     border: 1px solid black ;
     display: grid;
     justify-content: center;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     background-color: white;
     margin: auto;
-    padding: 40px;
+    padding: 20px;
     
     
   }
@@ -75,6 +89,15 @@
  width: 100%;
  gap: 20px;
     
+  }
+  .delete_popup_buttons button{
+
+    color: white;
+    background-color: black;
+    cursor: pointer;
+  }
+  .icons{
+    cursor: pointer;
   }
 
 

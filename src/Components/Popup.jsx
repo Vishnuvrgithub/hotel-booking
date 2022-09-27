@@ -12,13 +12,14 @@ const Popup = ({setState,editingId,setEditingId,roomData}) => {
     roomNumber:"",
     adultCapacity:"",
     childCapacity:"",
-    price:""
+    price:"",
+    amenities:[]
   });
 useEffect(() => {
      if (editingId) setFormData (roomData.find(r=>r.id == editingId))
 }, [editingId])
 
-const {roomNumber,adultCapacity,childCapacity,price} = formData;
+const {roomNumber,adultCapacity,childCapacity,price,amenities} = formData;
 
   const onChange =(value,key)=>{
     setFormData(prev=>({
@@ -26,7 +27,7 @@ const {roomNumber,adultCapacity,childCapacity,price} = formData;
     }))
   }
 
-  const [select, setSelect] = useState([])
+  
 
   const ClickMe= async(e)=>{
     e.preventDefault()
@@ -48,6 +49,12 @@ function closeWindow(){
     setEditingId(null)
   }
 
+
+  const addAmenities=(value)=>{
+    if(value && !amenities.includes(value))
+    onChange([...amenities,value],"amenities")
+  }
+
   return (
     <div className="popup_main">
    <div className="popup-container">
@@ -64,20 +71,21 @@ function closeWindow(){
    
    <div className="Amenities">
     <h2>Amenities </h2>
-    <select onChange={(e)=>{setSelect([...select,e.target.value])}}>
-      <option disabled value="select">Select</option>
-      <option value="tv">Television</option>
-      <option value="bed">Bed</option>
-      <option value="wifi">Wifi</option>
-      <option value="extra">Extre</option>
+    <select onChange={(e)=>{addAmenities(e.target.value)}}>
+      <option  value="">Select</option>
+      <option value="Tv">Television</option>
+      <option value="Bed">Bed</option>
+      <option value="Wifi">Wifi</option>
+      <option value="Ac">AC</option>
+      
     </select>
 
    
   
    <div className='selectdata'>
-    {select.map((data,index)=>{
+    {amenities.map((datas,index)=>{
     return(
-    <SelectLabel select={data} key={index} index={index} setSelect={setSelect} Select={select}/>
+    <SelectLabel datas={datas} key={index} index={index} setSelect={(value)=>onChange(value,"amenities")} amenities={amenities}/>
     )})}
     </div>
     </div>

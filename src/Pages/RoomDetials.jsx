@@ -41,6 +41,7 @@ function  popuproom(){
     <div className='mainframe'>
         
         <NavBar/>
+        <div className='subframe'>
         
         <h2 id='textroom'>ROOMS</h2>
         <div className="btn_add">
@@ -94,16 +95,19 @@ function  popuproom(){
     />}
 
     {deleteId && 
+    <div className="main_delete_popup">
     <div className="delete_popup">
         <div className="delete_popup_message">
-            <h3>Are you sure</h3>
+            <h3>Are you sure ?</h3>
         </div>
         <div className="delete_popup_buttons">
             <button onClick={deleteRoom}>Delete</button>
             <button onClick={()=>{setDeleteId(null)}}> cancel</button>
         </div>
     </div>
+    </div>
     }
+    </div>
     </div>
     </div>
       
