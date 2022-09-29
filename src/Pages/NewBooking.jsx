@@ -6,17 +6,17 @@ import Button from '../Components/Button'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import apicalls from '../Services/apiCalls'
+import apicall from '../Services/apiCall'
 
 const NewBooking = () => {
   const [available, setAvailable] = useState(false)
-  const [bookingId, setBookingId] = useState(null)
+  const [room, setRoom] = useState(null)
  
 
   const navigate=useNavigate()
   const [bookData, setBookData] = useState({
     guestLastName:"",
     guestFirstName:"",
-    room:"",
     checkInData:"",
     checkOutData:"",
     status:"",
@@ -24,7 +24,7 @@ const NewBooking = () => {
     numberOfAdults:""
   });
 
-  const {guestLastName,guestFirstName,room,checkInData,checkOutData,status,numberOfChild,numberOfAdults,id} =bookData;
+  const {guestLastName,guestFirstName,checkInData,checkOutData,status,numberOfChild,numberOfAdults,id} =bookData;
 
   const onChange=(value,key)=>{
     setBookData(prev=>({
@@ -32,34 +32,42 @@ const NewBooking = () => {
     }))
   }
 
-  function Available(e){
+  async function Available (e){
       setAvailable(true)
     console.log(available)
     e.preventDefault()
     // setBookingId(id)
     // console.log(id);
-    bookRoom()
-    
+    let room = await getRoom();
+    setRoom(room);
     
   }
+  const getRoom=()=>apicalls("/get-rooms","POST",{
+    ...bookData,
+    checkOutData: new Date(bookData.checkOutData).toISOString(),
+    checkInData: new Date(bookData.checkInData).toISOString(),
 
-    const bookRoom=()=>apicalls("/booking","POST",{
+  })
+
+
+    const bookRoom=(status)=>apicalls("/booking","POST",{
       ...bookData,
-      checOutData: new Date(bookData.checkOutData).toISOString(),
+      checkOutData: new Date(bookData.checkOutData).toISOString(),
       checkInData: new Date(bookData.checkInData).toISOString(),
-      room:undefined,
-      roomId:1
+      roomId: room.id,
+      status
     })
+  
     
   
   const [newavailable, setNewAvailable] = useState(false)
   function NewAvailable(){
-    setNewAvailable(!newavailable)
-    console.log(newavailable)
-    
+    console.log(room,bookData);
+    bookRoom("Booked")
 
-  
+
   }
+  
   
   return (
   
