@@ -5,31 +5,53 @@ import NavBar from '../Components/NavBar'
 import Button from '../Components/Button'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
-
-
-
+import apicalls from '../Services/apiCalls'
 
 const NewBooking = () => {
   const [available, setAvailable] = useState(false)
+  const [bookingId, setBookingId] = useState(null)
  
 
   const navigate=useNavigate()
-  const [lastname, setLastName] = useState('')
-  const [firstname, setFirstName] = useState('')
-  const [cid, setCid] = useState('')
-  const [cod, setCod] = useState('')
-  const [nod, setNod] = useState('')
-  const [noc, setNoc] = useState('')
+  const [bookData, setBookData] = useState({
+    guestLastName:"",
+    guestFirstName:"",
+    room:"",
+    checkInData:"",
+    checkOutData:"",
+    status:"",
+    numberOfChild:"",
+    numberOfAdults:""
+  });
+
+  const {guestLastName,guestFirstName,room,checkInData,checkOutData,status,numberOfChild,numberOfAdults,id} =bookData;
+
+  const onChange=(value,key)=>{
+    setBookData(prev=>({
+      ...prev,[key]:value
+    }))
+  }
 
   function Available(e){
       setAvailable(true)
     console.log(available)
     e.preventDefault()
-    console.log(lastname,firstname,cid,cod,nod,noc);
-
+    // setBookingId(id)
+    // console.log(id);
+    bookRoom()
+    
     
   }
+
+    const bookRoom=()=>apicalls("/booking","POST",{
+      ...bookData,
+      checOutData: new Date(bookData.checkOutData).toISOString(),
+      checkInData: new Date(bookData.checkInData).toISOString(),
+      room:undefined,
+      roomId:1
+    })
+    
+  
   const [newavailable, setNewAvailable] = useState(false)
   function NewAvailable(){
     setNewAvailable(!newavailable)
@@ -47,12 +69,12 @@ const NewBooking = () => {
       <h2>New Booking</h2>
       <div className="newbooking_subcontainor"><form method='post' onSubmit={Available}>
           <div className="newbooking_body">
-           <RoomLabel title='Guest Last Name' prop={setLastName}/>
-           <RoomLabel title='Guest First Name' prop={setFirstName}/>
-           <RoomLabel title='Check In Date' types="date" prop={setCid}/>
-           <RoomLabel title='Check Out Data' types="date" prop={setCod}/>
-           <RoomLabel title='Number Of Adults' prop={setNod}/>
-           <RoomLabel title='Number Of Childrens' prop={setNoc}/>
+           <RoomLabel title='Guest Last Name' value={guestLastName} onChange={(value)=>onChange(value,"guestLastName")}/>
+           <RoomLabel title='Guest First Name' value={guestFirstName} onChange={(value)=>onChange(value,"guestFirstName")}/>
+           <RoomLabel title='Check In Date' types="date" value={checkInData} onChange={(value)=>onChange(value,"checkInData")}/>
+           <RoomLabel title='Check Out Data' types="date" value={checkOutData} onChange={(value)=>onChange(value,"checkOutData")}/>
+           <RoomLabel title='Number Of Adults' value={numberOfAdults} onChange={(value)=>onChange(value,"numberOfAdults")}/>
+           <RoomLabel title='Number Of Childrens' value={numberOfChild} onChange={(value)=>onChange(value,"numberOfChild")}/>
            
            
           </div><div className="buttonsalign">

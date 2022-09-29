@@ -3,16 +3,28 @@ import NavBar from '../Components/NavBar'
 import './BookingPage.css'
 import Button from '../Components/Button'
 import NewBooking from './NewBooking'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+
+import apicalls from '../Services/apiCalls'
 
 
 const BookingPage = ({datas}) => {
+  const [roomBooking, setRoomBooking] = useState([])
+  
   const [Booking, setBooking] = useState(false)
   function New(){
     setBooking(true)
     console.log(Booking);
   }
+  useEffect(() => {
+    apicalls("/booking","GET")
+      .then(response=>{
+        setRoomBooking(response);
+      })
+  }, [setRoomBooking])
+
+
   return (
     <div className='mainbox'>
       <NavBar/><div className="mainheader"> <h1 id='head'>Bookings</h1><div><label  htmlFor="" >
@@ -36,16 +48,18 @@ const BookingPage = ({datas}) => {
         <div className="box a"><h5>Status</h5></div>
 
 </div>
-{datas.map((rdatas,index)=>{ 
+{roomBooking.map(({
+  roomId,guestLastName,guestFirstName,room,checkInData,checkOutData,status
+})=>{ 
          return (
         
-        <div className="book_container" key={index}>
-        <div className="value">{rdatas.lname}</div>
-        <div className="values1">{rdatas.fname}</div>
-        <div className="values">{rdatas.rn}</div>
-        <div className="values1">{rdatas.cid}</div> 
-        <div className="values1">{rdatas.cod}</div> 
-        <div className="values">{rdatas.status}</div> 
+        <div className="book_container" key={roomId}>
+        <div className="value">{guestLastName}</div>
+        <div className="values1">{guestFirstName}</div>
+        <div className="values">{room.roomNumber}</div>
+        <div className="values1">{checkInData}</div> 
+        <div className="values1">{checkOutData}</div> 
+        <div className="values">{status}</div> 
         </div>
          );
         })}

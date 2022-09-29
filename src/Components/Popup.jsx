@@ -51,9 +51,9 @@ function closeWindow(){
 
 
   const addAmenities=(value)=>{
-    if(value && !amenities.includes(value))
-    onChange([...amenities,value],"amenities")
-  }
+    if(value && !amenities.map(a=>a.text).includes(value)){
+    onChange([...amenities,{text:value}],"amenities")
+  }}
 
   return (
     <div className="popup_main">
@@ -85,7 +85,7 @@ function closeWindow(){
    <div className='selectdata'>
     {amenities.map((datas,index)=>{
     return(
-    <SelectLabel datas={datas} key={index} index={index} setSelect={(value)=>onChange(value,"amenities")} amenities={amenities}/>
+    <SelectLabel datas={datas.text} key={index} index={index} setSelect={(value)=>onChange(value,"amenities")} amenities={amenities}/>
     )})}
     </div>
     </div>

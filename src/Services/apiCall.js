@@ -1,7 +1,7 @@
 
-const apicall = async(url,method,data)=>{
+const apicall = async(url,method,data,localhost)=>{
 
-const responce= await fetch(`http://localhost:8000${url}`,{
+const responce= await fetch(`http://localhost:5200${url}`,{
     method,
     headers:{
       "Content-type":"application/json"
